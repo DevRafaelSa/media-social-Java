@@ -34,6 +34,11 @@ public class UserResource {
         return user;
     }
 
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id) {
+        service.deleteById(id);
+    }
+
     @PostMapping("/users")
     public ResponseEntity<User> createUsers(@RequestBody User user) {
         User savedUser = service.save(user);
