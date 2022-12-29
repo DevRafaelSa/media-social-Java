@@ -33,6 +33,7 @@ public class UserDaoService {
     }
 
     public User findOne(int id) {
+        //interface funcional que pode ser utilizada como alvo para uma atribuição de expressão lambda ou método de referência.
         Predicate<? super User> predicate = user -> user.getId().equals(id);
         return users.stream().filter(predicate).findFirst().orElse(null);
     }
